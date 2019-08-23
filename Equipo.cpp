@@ -9,6 +9,10 @@
 			string anioFundacion;
 			vector<Jugador*>jugadores;
 		public:
+			Equipo(string nombre,string anioFundacion){
+				this->anioFundacion=anioFundacion;
+				this->nombre=nombre;
+			}
 			string getNombre() {
 		        return nombre;
 		    }
@@ -23,6 +27,14 @@
 		
 		    void setAnioFundacion(string anioFundacion) {
 		        this->anioFundacion = anioFundacion;
-		    }		
+		    }	
+			addJugador(Jugador*jugador){
+				jugadores.push_back(jugador);
+			}	
+			vector<Jugador*> getJugador(){
+				return jugadores;
+			}
+			
+			
 	};
 #endif

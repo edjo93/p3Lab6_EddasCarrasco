@@ -10,6 +10,10 @@
 			string pais;
 			vector<Equipo*>equipos;
 		public:
+			Liga(string nombre,string pais){
+				this->nombre=nombre;
+				this->pais=pais;
+			}
 			void addEquipo(Equipo*equipo){
 				equipos.push_back(equipo);
 			}

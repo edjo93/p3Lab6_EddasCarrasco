@@ -1,14 +1,14 @@
-#ifndef ADMLIGA_CPP
-#define ADMLIGA_CPP
-	#include"Liga.cpp"
+#ifndef ADMJUGADOR_CPP
+#define ADMJUGADOR_CPP
+	#include"Jugador.cpp"
 	#include<fstream>
 	#include<iostream>
 	#include<string.h>
 	using namespace std;
-	class AdmLiga{
+	class AdmJugador{
 		private:
 			string ruta;
-			vector<Liga*>ligas;
+			vector<Jugador*>jugadores;
 			string token(string cadena, string divisor, int pos){//tabulacion del ing osman xD
 		       if(cadena.size()>0){
 		        	char oracion[cadena.size()]; 
@@ -33,29 +33,29 @@
 		        }
 			}
 		public:
-			AdmLiga(string ruta){
+			AdmJugador(string ruta){
 				this->ruta=ruta;
 			}
-			void addLiga(Liga*liga){
-				ligas.push_back(liga);
+			void addJugador(Jugador*liga){
+				jugadores.push_back(liga);
 			}	
-			void eraseLiga(int pos){
-				ligas.erase(ligas.begin()+pos);
+			void eraseJugador(int pos){
+				jugadores.erase(jugadores.begin()+pos);
 			}
-			~AdmLiga(){
+			~AdmJugador(){
 				
 			}
 			//leer 
 			void leer(){
 				fstream leer;
 				string linea;
-				ligas.clear();
+				jugadores.clear();
 				leer.open(ruta.c_str());
-				if(leer.is_open()){//al terminar de leer el archivo el vector de ligas estara lleno
+				if(leer.is_open()){//al terminar de leer el archivo el vector de jugadores estara lleno
 					while(!leer.eof()){
 						getline(leer,linea);
 						if(linea.at(0)=='$'){
-							addLiga(new Liga(token(linea,":$",1),token(linea,":$",2)));
+							addJugador(new Jugador(token(linea,":$",1),token(linea,":$",2)));
 						}
 					}
 				}else{
@@ -66,8 +66,8 @@
 			void escribir(){
 				fstream escribir;
 				escribir.open(ruta.c_str());
-				for(int i=0;i<ligas.size();i++){
-					escribir<<"$"<<ligas[i]->getNombre()<<":"<<ligas[i]->getPais()<<endl;
+				for(int i=0;i<jugadores.size();i++){
+					escribir<<"$"<<jugadores[i]->getNombre()<<":"<<jugadores[i]->getPais()<<endl;
 				}
 				escribir.close();
 			}
