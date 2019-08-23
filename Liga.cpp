@@ -8,7 +8,22 @@
 		public:
 			void addEquipo(Equipo*equipo){
 				equipos.push_back(equipo);
-			}	
+			}
+			string getNombre() {
+		        return nombre;
+		    }
+		
+		    void setNombre(string nombre) {
+		        this->nombre = nombre;
+		    }
+		
+		    string getPais() {
+		        return pais;
+		    }
+		
+		    void setPais(string pais) {
+		        this->pais = pais;
+		    }	
 			
 	};
 #endif

@@ -7,6 +7,20 @@
 			string anioFundacion;
 			vector<Jugador*>jugadores;
 		public:
-				
+			public string getNombre() {
+		        return nombre;
+		    }
+		
+		    void setNombre(string nombre) {
+		        this->nombre = nombre;
+		    }
+		
+		    string getAnioFundacion() {
+		        return anioFundacion;
+		    }
+		
+		    void setAnioFundacion(string anioFundacion) {
+		        this->anioFundacion = anioFundacion;
+		    }		
 	};
 #endif
