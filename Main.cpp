@@ -1,4 +1,6 @@
 #include<iostream>
+#include"AdmLiga.cpp"
+using namespace std;
 int main(){
 	char opcion;
 	do{
@@ -6,7 +8,12 @@ int main(){
 		cin>>opcion;
 		switch(opcion){
 			case'1':
-				//adm ligas
+				{
+					//adm ligas
+					AdmLiga admLiga("./ligas.txt");
+					admLiga.leer();	
+				}
+				
 				break;
 			case'2':
 				break;

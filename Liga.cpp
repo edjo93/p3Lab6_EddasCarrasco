@@ -1,5 +1,9 @@
 #ifndef LIGA_CPP
 #define LIGA_CPP
+	#include<string>
+	#include<vector>
+	#include"Equipo.cpp"
+	using namespace std;
 	class Liga{
 		private:
 			string nombre;
