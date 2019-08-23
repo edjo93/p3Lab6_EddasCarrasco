@@ -63,11 +63,12 @@
 				}
 				leer.close();
 			}
+			
 			void escribir(){
 				fstream escribir;
 				escribir.open(ruta.c_str());
 				for(int i=0;i<equipos.size();i++){
-					escribir<<equipos[i]->getNombre()<<":"<<equipos[i]->getAnioFundacion()<<endl;
+					escribir<<equipos[i]->getNombre()<<":"<<equipos[i]->getAnioFundacion()<<"{";
 				}
 				escribir.close();
 			}

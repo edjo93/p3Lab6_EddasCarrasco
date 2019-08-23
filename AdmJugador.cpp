@@ -3,6 +3,7 @@
 	#include"Jugador.cpp"
 	#include<fstream>
 	#include<iostream>
+	#include<vector>
 	#include<string.h>
 	using namespace std;
 	class AdmJugador{
@@ -36,8 +37,8 @@
 			AdmJugador(string ruta){
 				this->ruta=ruta;
 			}
-			void addJugador(Jugador*liga){
-				jugadores.push_back(liga);
+			void addJugador(Jugador*jugador){
+				jugadores.push_back(jugador);
 			}	
 			void eraseJugador(int pos){
 				jugadores.erase(jugadores.begin()+pos);
@@ -55,7 +56,8 @@
 					while(!leer.eof()){
 						getline(leer,linea);
 						if(linea.at(0)=='$'){
-							addJugador(new Jugador(token(linea,":$",1),token(linea,":$",2)));
+							//add jugador
+							
 						}
 					}
 				}else{
@@ -63,11 +65,12 @@
 				}
 				leer.close();
 			}
+			
 			void escribir(){
 				fstream escribir;
 				escribir.open(ruta.c_str());
 				for(int i=0;i<jugadores.size();i++){
-					escribir<<"$"<<jugadores[i]->getNombre()<<":"<<jugadores[i]->getPais()<<endl;
+					escribir<<jugadores[i]->getNombre()<<":"<<jugadores[i]->getDorsal()<<jugadores[i]->getPaisOrigen();
 				}
 				escribir.close();
 			}

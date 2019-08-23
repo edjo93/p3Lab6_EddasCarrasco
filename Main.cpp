@@ -13,7 +13,6 @@ int main(){
 					//adm ligas
 					AdmLiga admLiga("./ligas.txt");
 					admLiga.leer();
-					admLiga.escribir();	
 				}
 				
 				break;
@@ -21,7 +20,6 @@ int main(){
 				{
 					AdmEquipo admEquipo("./ligas.txt");
 					admEquipo.leer();
-					admEquipo.escribir();
 				}
 				break;
 			case'3':
