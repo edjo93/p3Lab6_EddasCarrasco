@@ -5,6 +5,7 @@
 			string nombre;
 			string dorsal;
 			string paisOrigen;
-			
+		public:
+				
 	};
 #endif
