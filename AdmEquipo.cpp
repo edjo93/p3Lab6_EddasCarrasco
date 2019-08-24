@@ -63,7 +63,14 @@
 				}
 				leer.close();
 			}
-			
+			int size(){
+				return equipos.size();	
+			}
+			void print(){
+				for(int i=0;i<equipos.size();i++){
+					cout<<"["<<i<<"] "<<equipos[i]->getNombre()<<endl;
+				}
+			}
 			void escribir(){
 				fstream escribir;
 				escribir.open(ruta.c_str());

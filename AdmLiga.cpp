@@ -42,6 +42,14 @@
 			void eraseLiga(int pos){
 				ligas.erase(ligas.begin()+pos);
 			}
+			int size(){
+				return ligas.size();
+			}
+			void print(){
+				for(int i=0;i<ligas.size();i++){
+					cout<<"["<<i<<"] "<<ligas[i]->getNombre()<<endl;
+				}
+			}
 			~AdmLiga(){
 				
 			}
