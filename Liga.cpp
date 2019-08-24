@@ -14,7 +14,7 @@
 				this->nombre=nombre;
 				this->pais=pais;
 			}
-			set
+			
 			void addEquipo(Equipo*equipo){
 				equipos.push_back(equipo);
 			}

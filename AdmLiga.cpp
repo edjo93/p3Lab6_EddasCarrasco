@@ -65,6 +65,11 @@
 				if(leer.is_open()){//al terminar de leer el archivo el vector de ligas estara lleno
 					while(!leer.eof()){
 						getline(leer,linea);
+						if(linea.at(0)=='$'){
+							/*
+							addLiga(new Liga(token(linea,":$",1)),token(linea,":$",2)));
+							*/
+						}
 						
 					}
 				}else{
