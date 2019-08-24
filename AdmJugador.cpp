@@ -43,6 +43,14 @@
 			void eraseJugador(int pos){
 				jugadores.erase(jugadores.begin()+pos);
 			}
+			int size(){
+				return jugadores.size();
+			}
+			void print(){
+				for(int i=0;i<jugadores.size();i++){
+					cout<<"["<<i<<"] "<<jugadores[i]->getNombre()<<endl;
+				}
+			}
 			~AdmJugador(){
 				
 			}

@@ -76,8 +76,21 @@ int main(){
 										cout<<"anio Fundacion: ";
 										cin>>anioFundacion;
 										admEquipo.addEquipo(new Equipo(nombre,anioFundacion));
+										/*
+										//enviar a liga
+										admLiga.print();
+										int pos;
+										cout<<"\nenviar equipo a pos: ";
+										cin>>pos;
+										if(pos>=0&&pos<admLiga.size()){
+											//añadir el equipo a la liga correspondiente
+											admLiga.getLiga()[pos]->addEquipo();
+										}else{
+											cout<<"\nno valid pos\n";
+										}
+										*/
 									}else{
-										//no se pueden crear equipos
+										//no se pueden crear equipos porque no hay ligas
 										cout<<"\naun no hay ligas\n";
 									}
 								}
@@ -87,7 +100,7 @@ int main(){
 								{
 									if(admEquipo.size()>0){
 										int pos;
-										cout<<"pos "<<"liga"<<endl;
+										cout<<"pos "<<"equipo"<<endl;
 										admEquipo.print();
 										cout<<"?:";
 										cin>>pos;
@@ -102,6 +115,7 @@ int main(){
 								}
 								break;
 							case'3':
+								
 								break;
 							default:
 								cout<<"\nno selecciono una opcion correcta\n";			
@@ -113,12 +127,58 @@ int main(){
 				break;
 			case'3':
 				{
-					if(admEquipo.size()>0){
-						//si se pueden crear jugadores
-					}else{
-						//no se pueden crear jugadores
-						cout<<"\naun no hay equipos\n";
-					}
+					char opcion2;
+					do{
+						cout<<"\n1-agregar\n2-eliminar\n3-salir\n?:";
+						cin>>opcion2;
+						switch(opcion2){
+							case'1':
+								{
+									if(admEquipo.size()>0){
+										//si se pueden crear jugadores
+										string nombre;
+										string dorsal;
+										string paisOrigen;
+										cout<<"\nnombre: ";
+										cin>>nombre;
+										cout<<"dorsal: ";
+										cin>>dorsal;
+										cout<<"paisOrigen: ";
+										cin>>paisOrigen;
+										admJugador.addJugador(new Jugador(nombre,dorsal,paisOrigen));
+									}else{
+										//no se pueden crear jugadores
+										cout<<"\naun no hay equipos\n";
+									}
+								}
+								
+								break;
+							case'2':
+								{
+									if(admJugador.size()>0){
+										int pos;
+										cout<<"pos "<<"jugador"<<endl;
+										admJugador.print();
+										cout<<"?:";
+										cin>>pos;
+										if(pos>=0&&pos<admJugador.size()){
+											admJugador.eraseJugador(pos);
+										}else{
+											cout<<"\nno valid pos\n";
+										}
+									}else{
+										cout<<"\naun no hay jugadores\n";
+									}
+								}
+								break;
+							case'3':
+								
+								break;
+							default:
+								cout<<"\nno selecciono una opcion correcta\n";			
+						}
+					}while(opcion2!='3');
+					
 				}
 				break;
 			case'4':

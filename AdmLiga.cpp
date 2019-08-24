@@ -33,6 +33,9 @@
 		        }
 			}
 		public:
+			vector<Liga*> getLiga(){
+				return ligas;
+			}
 			AdmLiga(string ruta){
 				this->ruta=ruta;
 			}
@@ -62,7 +65,7 @@
 				if(leer.is_open()){//al terminar de leer el archivo el vector de ligas estara lleno
 					while(!leer.eof()){
 						getline(leer,linea);
-						cout<<linea;
+						
 					}
 				}else{
 					cout<<"\nno se pudo abrir el archivo\n";
